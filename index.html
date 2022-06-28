@@ -5,54 +5,59 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather App</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="weather-app">
         <div class="container">
             <h3 class="brand">the weather</h3>
-            <h1 class="temperature">16</h1>
+            
             <div class="city-name">
+                <h1 class="temperature">16</h1>
                 <h1 class="name">London</h1>
                 <small>
                     <span class="time">06:09</span>
                     <br>
                     <span class="date">Monday Sep 19</span>
                 </small>
+                <div class="weather">
+                    <span class="condition">Cloudy</span>
+                </div>
             </div>
-            <div class="weather">
-                <span class="condition">Cloudy</span>
-            </div>
+            
         </div>
 
         <div class="panel">
             <form id="locationInput">
                 <input type="text" class="search" placeholder="Search Location...">
-                <button type="submit" class="submit">Search</button>
+                <button type="submit" class="submit-btn">Search</button>
             </form>
+
+            <ul class="cities">
+                <li class="city">New York</li>
+                <li class="city">New Yersy</li>
+                <li class="city">Paris</li>
+                <li class="city">Gorzów</li>
+            </ul>
+    
+            <ul class="details">
+                <h4>Weather Details</h4>
+                <li>
+                    <span>Cloudy</span>
+                    <span class="cloud">89%</span>
+                </li>
+                <li>
+                    <span>Humidity</span>
+                    <span class="humidity">49%</span>
+                </li>
+                <li>
+                    <span>Wind</span>
+                    <span class="wind">10km/h</span>
+                </li>
+            </ul>
         </div>
 
-        <ul class="cities">
-            <li class="city">New York</li>
-            <li class="city">New Yersy</li>
-            <li class="city">Paris</li>
-            <li class="city">Gorzów</li>
-        </ul>
-
-        <ul class="details">
-            <h4>Weather Details</h4>
-            <li>
-                <span>Cloudy</span>
-                <span class="cloud">89%</span>
-            </li>
-            <li>
-                <span>Humidity</span>
-                <span class="humidity">49%</span>
-            </li>
-            <li>
-                <span>Wind</span>
-                <span class="wind">10km/h</span>
-            </li>
-        </ul>
+        
     </div>
 </body>
 </html>
