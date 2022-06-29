@@ -1,6 +1,7 @@
 body {
     margin: 0;
     background: #111;
+    font-family: 'Raleway', sans-serif;
 }
 
 *{
@@ -155,4 +156,30 @@ h1,h3 {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+/* RESPONSIVE CSS DESIGN  */
+
+@media screen and (max-width: 800px) {
+    
+    .panel, .container {
+        position: relative;
+        width: 100%;
+        top: initial;
+    }
+
+}
+@media screen and (max-width: 500px) {
+    
+    html {
+        font-size: 12px;
+    }
+
+}
+@media screen and (max-width: 300px) {
+    
+    .weather-app {
+       min-height: 40em; 
+    }
+
 }
