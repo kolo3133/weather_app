@@ -14,18 +14,20 @@ const form = document.getElementById("locationInput");
 const search = document.querySelector(".search");
 const submitButton = document.querySelector(".submit-btn");
 const cities = document.querySelectorAll(".city");
+const citiesList = document.querySelector(".cities");
+const info = document.getElementById("list-empty");
 
 // Default city when the page loads
 let cityInput = "Warsaw";
 
 // Add click event for each city in the panel
 cities.forEach((city) => {
-  city.addEventListener("click", (mops) => {
+  city.addEventListener("click", (e) => {
     // Changing city name from default to the clicked one
-    cityInput = mops.target.innerHTML;
+    cityInput = e.target.innerHTML;
     fetchWeatherData();
     // Fade out animation
-    app.style.opacity = "0";
+    // app.style.opacity = "0";
   });
 });
 
@@ -60,6 +62,17 @@ function dayOfTheWeek(day, month, year) {
   return weekday[new Date(`${day}/${month}/${year}`).getDay()];
 }
 
+function changeCitiesList() {
+  newCitiesListItem = nameOutput.textContent;
+
+  const newListItems = document.createElement("li");
+  newListItems.classList.add("city");
+  newListItems.innerHTML = newCitiesListItem;
+  citiesList.append(newListItems);
+
+  info.classList.add("d-none");
+}
+
 // Function that fetches and displays the data from the weather API
 function fetchWeatherData() {
   // fetching data from api
@@ -91,5 +104,7 @@ function fetchWeatherData() {
       windOutput.innerHTML = data.current.wind_kph + "km/h";
 
       app.style.opacity = "1";
+
+      changeCitiesList();
     });
 }
