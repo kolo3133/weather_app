@@ -21,10 +21,11 @@ const info = document.getElementById("list-empty");
 let cityInput = "Warsaw";
 
 // Add click event for each city in the panel
-cities.forEach((city) => {
-  city.addEventListener("click", (e) => {
+cities.forEach((i) => {
+  i.addEventListener("click", (e) => {
     // Changing city name from default to the clicked one
     cityInput = e.target.innerHTML;
+    console.log("click");
     fetchWeatherData();
     // Fade out animation
     // app.style.opacity = "0";
@@ -62,13 +63,14 @@ function dayOfTheWeek(day, month, year) {
   return weekday[new Date(`${day}/${month}/${year}`).getDay()];
 }
 
+// Function that is adding cities to last cities list
 function changeCitiesList() {
   newCitiesListItem = nameOutput.textContent;
 
-  const newListItems = document.createElement("li");
-  newListItems.classList.add("city");
-  newListItems.innerHTML = newCitiesListItem;
-  citiesList.append(newListItems);
+  const newListItem = document.createElement("li");
+  newListItem.classList.add("city");
+  newListItem.innerHTML = newCitiesListItem;
+  citiesList.append(newListItem);
 
   info.classList.add("d-none");
 }
